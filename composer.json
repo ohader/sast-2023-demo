@@ -1,0 +1,23 @@
+{
+    "name": "oliver-hader/sast-2023-demo",
+    "description": "SAST 2023 Demo",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OliverHader\\Sast2023Demo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Oliver Hader",
+            "email": "oliver.hader@typo3.org"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*",
+        "symfony/http-foundation": "^6.2",
+        "twig/twig": "^3.5",
+        "doctrine/dbal": "^3.6"
+    }
+}
