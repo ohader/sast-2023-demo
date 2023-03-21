@@ -1,4 +1,4 @@
-# SAST 2023 Demo
+# SAST 2023 Demo - Static Application Security Testing for PHP Applications
 
 ## Requirements
 
