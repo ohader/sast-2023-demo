@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<psalm
+    runTaintAnalysis="true"
+    hoistConstants="true"
+    hideExternalErrors="true"
+    errorLevel="4"
+
+    resolveFromConfigFile="true"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+    <extraFiles>
+        <directory name="vendor"/>
+    </extraFiles>
+    <fileExtensions>
+        <extension name="php"/>
+    </fileExtensions>
+    <!--
+        <stubs>
+            <file name="stubs/stubs.stubphp" />
+        </stubs>
+        <plugins>
+            <pluginClass class="TYPO3Security\PsalmPlugin\Plugin"/>
+        </plugins>
+    -->
+</psalm>

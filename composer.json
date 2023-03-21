@@ -18,6 +18,8 @@
         "ext-pdo": "*",
         "symfony/http-foundation": "^6.2",
         "twig/twig": "^3.5",
-        "doctrine/dbal": "^3.6"
+        "doctrine/dbal": "^3.6",
+        "nikic/php-parser": "^4.15",
+        "vimeo/psalm": "^5.8"
     }
 }
