@@ -10,11 +10,11 @@ final class SimpleController
     {
         $id = $_POST['id'] ?? $_GET['id'] ?? null;
         $statement = $this->pdo->query(
-            'SELECT title FROM content WHERE id=' . $id
+            'SELECT * FROM content WHERE id=' . $id
         );
         $row = $statement->fetch(\PDO::FETCH_ASSOC);
         $content = sprintf(
-            '<h2>%s</h2><p>%s</p>',
+            '<h1>SimpleController</h1><h2>%s</h2><p>%s</p>',
                 $row['title'] ?? 'no item found',
                 $row['content'] ?? ''
         );
