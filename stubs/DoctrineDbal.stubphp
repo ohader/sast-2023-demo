@@ -1,0 +1,30 @@
+<?php
+namespace Doctrine\DBAL\Query
+{
+    class QueryBuilder
+    {
+        /**
+         * @param array<int, string> $predicates
+         * @psalm-taint-specialize
+         * @psalm-taint-sink sql $predicates
+         */
+        public function where(
+            ...$predicates
+        ): QueryBuilder {}
+    }
+}
+namespace Doctrine\DBAL\Query\Expression
+{
+    class ExpressionBuilder
+    {
+        /**
+         * @psalm-flow ($value) -> return
+         * @psalm-pure
+         * @psalm-taint-specialize
+         */
+        public function eq(
+            string $fieldName,
+            $value
+        ): string {}
+    }
+}

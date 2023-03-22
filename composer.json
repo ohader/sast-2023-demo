@@ -19,7 +19,11 @@
         "symfony/http-foundation": "^6.2",
         "twig/twig": "^3.5",
         "doctrine/dbal": "^3.6",
-        "nikic/php-parser": "^4.15",
-        "vimeo/psalm": "^5.8"
+        "nikic/php-parser": "^4.15"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^5.8",
+        "psalm/plugin-symfony": "^5.0",
+        "weirdan/doctrine-psalm-plugin": "^2.8"
     }
 }

@@ -1,0 +1,27 @@
+<?php
+namespace Symfony\Component\HttpFoundation
+{
+    class Request
+    {
+        /**
+         * @psalm-taint-source input
+         */
+        public function get(
+            string $key,
+            mixed $default = null
+        ): mixed {}
+    }
+    class Response
+    {
+        /**
+         * @psalm-taint-sink html $content
+         * @psalm-taint-sink header $headers
+         * @psalm-taint-specialize
+         */
+        public function __construct(
+            ?string $content = '',
+            int $status = 200,
+            array $headers = []
+        ) {}
+    }
+}

@@ -14,9 +14,10 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="src" />
+        <directory name="src"/>
+        <directory name="templates"/>
         <ignoreFiles>
-            <directory name="vendor" />
+            <directory name="vendor"/>
         </ignoreFiles>
     </projectFiles>
     <extraFiles>
@@ -24,13 +25,18 @@
     </extraFiles>
     <fileExtensions>
         <extension name="php"/>
+        <!-- <extension name="twig" checker="vendor/psalm/plugin-symfony/src/Twig/TemplateFileAnalyzer.php"/> -->
     </fileExtensions>
-    <!--
-        <stubs>
-            <file name="stubs/stubs.stubphp" />
-        </stubs>
-        <plugins>
-            <pluginClass class="TYPO3Security\PsalmPlugin\Plugin"/>
-        </plugins>
-    -->
+    <plugins>
+        <!--
+        <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin">
+            <twigCachePath>/var/cache/twig</twigCachePath>
+        </pluginClass>
+        -->
+        <!-- <pluginClass class="Weirdan\DoctrinePsalmPlugin\Plugin"/> -->
+    </plugins>
+    <stubs>
+        <file name="stubs/DoctrineDbal.stubphp" />
+        <file name="stubs/SymfonyHttpFoundation.stubphp" />
+    </stubs>
 </psalm>
