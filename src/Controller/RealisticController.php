@@ -16,7 +16,7 @@ final class RealisticController
 
     public function showAction(Request $request): Response
     {
-        $id = $request->request->get('id') ?? $request->query->get('id') ?? 0;
+        $id = $request->get('id') ?? 0;
         $queryBuilder = $this->connection->createQueryBuilder();
         $result = $queryBuilder
             ->select('*')
@@ -24,7 +24,8 @@ final class RealisticController
             ->where($queryBuilder->expr()->eq('id', $id))
             ->executeQuery();
         $item = $result->fetchAssociative();
-        $content = $this->twig->render('show.twig', ['item' => $item, 'id' => $id]);
+        $variables = ['item' => $item, 'id' => $id];
+        $content = $this->twig->render('show.twig', $variables);
         $headers = ['Content-Type' => 'text/html', 'X-App-Id' => $id];
         return new Response($content, Response::HTTP_OK, $headers);
     }
